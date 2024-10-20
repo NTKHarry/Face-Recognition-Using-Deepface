@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Two Images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Verify Two Images</h1>
+        <form action="{{ url_for('verify') }}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image1">Image 1:</label>
+                <input type="file" class="form-control-file" name="image1" required>
+            </div>
+            <div class="form-group">
+                <label for="image2">Image 2:</label>
+                <input type="file" class="form-control-file" name="image2" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Verify</button>
+        </form>
+    </div>
+</body>
+</html>

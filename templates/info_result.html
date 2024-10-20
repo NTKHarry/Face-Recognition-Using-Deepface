@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Info Results</title>
+    <style>
+        .face-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .face-card {
+            margin: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        .face-card img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Analysis Results</h1>
+
+<div class="face-container">
+    {% for face in faces %}
+        <div class="face-card">
+            <img src="{{ url_for('static', filename='uploads/' + face['image']) }}" alt="Detected Face">
+            <h3>Details:</h3>
+            <ul>
+                <li>Age: {{ face['age'] }}</li>
+                <li>Gender: {{ face['gender'] }}</li>
+                <li>Emotion: {{ face['emotion'] }}</li>
+                <li>Race: {{ face['race'] }}</li>
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
