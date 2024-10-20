@@ -1,0 +1,7 @@
+Flask==2.2.2
+Flask-Cors==3.0.10
+DeepFace==0.0.65
+tensorflow==2.10.0
+opencv-python==4.5.5.64
+Pillow==9.1.0
+numpy==1.23.3
